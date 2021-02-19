@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rbSP = (RadioButton) findViewById(R.id.RbSobrepeso);
         RadioButton rbOb = (RadioButton) findViewById(R.id.RbObesidad);
 
-        CheckBox checkDiab = (CheckBox) findViewById(R.id.checkPadecimiento1);
-        CheckBox checkPulm = (CheckBox) findViewById(R.id.checkPadecimiento2);
-        CheckBox checkRenal = (CheckBox) findViewById(R.id.checkPadecimiento3);
-        CheckBox checkInmuno = (CheckBox) findViewById(R.id.checkPadecimiento4);
+        CheckBox checkHiper = (CheckBox) findViewById(R.id.checkPadecimiento1);
+        CheckBox checkDiab = (CheckBox) findViewById(R.id.checkPadecimiento2);
+        CheckBox checkPulm = (CheckBox) findViewById(R.id.checkPadecimiento3);
+        CheckBox checkRenal = (CheckBox) findViewById(R.id.checkPadecimiento4);
+        CheckBox checkInmuno = (CheckBox) findViewById(R.id.checkPadecimiento5);
+
 
         Button bResul = (Button) findViewById(R.id.btnCalcular);
         TextView textViewResul = (TextView) findViewById(R.id.textViewResul);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     r2 = 60;
                 }
 
+
                 if(rbPB.isChecked() == true){
                     r3 = 10;
                 }
@@ -93,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                     r3 = 30;
                 }
 
+                if(checkHiper.isChecked() == true){
+                    r4 += 40;
+                }
                 if(checkDiab.isChecked() == true){
                     r4 += 20;
                 }
@@ -105,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 if(checkInmuno.isChecked() == true){
                     r4 += 40;
                 }
+
 
                 resultado = r1 +  r2 + r3 + r4;
                 //r = String.valueOf(resultado);
@@ -125,54 +132,41 @@ public class MainActivity extends AppCompatActivity {
                     dialog.show();
                 }
                 if((resultado >= 61) && (resultado <= 120)){
-                    //Se crea objeto
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    //Titulo
                     builder.setTitle("El riesgo es:");
-                    //Mensaje
                     builder.setMessage("MEDIO \nDebes de evitar salir");
-                    //Texto del botón
                     builder.setPositiveButton("Aceptar", null);
-                    //Se crea
                     AlertDialog dialog = builder.create();
-                    //Se muestra
                     dialog.show();
                 }
                 if((resultado >= 121) && (resultado <= 180)){
-                    //Se crea objeto
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    //Titulo
                     builder.setTitle("El riesgo es:");
-                    //Mensaje
                     builder.setMessage("ALTO \nQuedate en casa y toma las medidas de sanidad");
-                    //Texto del botón
                     builder.setPositiveButton("Aceptar", null);
-                    //Se crea
                     AlertDialog dialog = builder.create();
-                    //Se muestra
                     dialog.show();
                 }
                 if(resultado >= 181){
-                    //Se crea objeto
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    //Titulo
                     builder.setTitle("El riesgo es:");
-                    //Mensaje
                     builder.setMessage("¡MUY ALTO! \nNo debes de salir, eres un grupo vulnerable");
-                    //Texto del botón
                     builder.setPositiveButton("Aceptar", null);
-                    //Se crea
                     AlertDialog dialog = builder.create();
-                    //Se muestra
                     dialog.show();
                 }
                 rg1.clearCheck();
                 rg2.clearCheck();
                 editTextEdad.setText("");
+                checkHiper.setChecked(false);
                 checkDiab.setChecked(false);
                 checkPulm.setChecked(false);
                 checkInmuno.setChecked(false);
                 checkRenal.setChecked(false);
+
                 r1 = 0;
                 r2 = 0;
                 r3 = 0;

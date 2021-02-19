@@ -23,6 +23,7 @@ tools:context=".MainActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="#FF9800"
         android:text="Selecciona tus caracteristicas"
         android:textSize="18sp" />
 
