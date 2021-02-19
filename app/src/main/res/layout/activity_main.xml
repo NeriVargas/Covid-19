@@ -41,12 +41,14 @@ tools:context=".MainActivity"
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/RadiobutomSexoM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mujer"
             />
 
         <RadioButton
+            android:id="@+id/RadiobutomSexoH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hombre" />
@@ -84,21 +86,25 @@ tools:context=".MainActivity"
         android:layout_marginTop="26dp">
 
         <RadioButton
+            android:id="@+id/RbBajoP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bajo peso" />
 
         <RadioButton
+            android:id="@+id/RbPesoN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Peso normal" />
 
         <RadioButton
+            android:id="@+id/RbSobrepeso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="sobrepeso" />
 
         <RadioButton
+            android:id="@+id/RbObesidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Obesidad" />
@@ -147,6 +153,16 @@ tools:context=".MainActivity"
         android:text="Calcular"
         android:layout_marginTop="26dp"
         />
+
+    <TextView
+        android:id="@+id/textViewResul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#0C0C0C"
+        android:textSize="24sp"
+        android:textStyle="italic" />
 </LinearLayout>
 
 
